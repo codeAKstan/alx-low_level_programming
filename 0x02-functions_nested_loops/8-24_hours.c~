@@ -1,0 +1,24 @@
+#include "main.h"
+/**
+ *jack_bauer - prints every minutes
+ */
+
+void jack_bauer(void)
+{
+	int h = 0;
+	while (h <= 23)
+	{
+		int min = 0;		
+		while (min <= 59)
+		{
+			_putchar((i / 10) + '0');
+			_putchar((i / 10) + '0');
+			_putchar(':');
+			_putchar((j / 10) + '0');
+			_putchar((j % 10) + '0');
+			_putchar('\n');
+			j++;
+		}
+		i++;
+	}
+}
