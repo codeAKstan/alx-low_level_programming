@@ -1,15 +1,16 @@
 #include "main.h"
 /**
- *print_alpahbet_x10 - print the lowercase alphabet 10 times
+ *print_alphabet_x10 - print the lowercase alphabet 10 times
  *its a void function
  */
 void print_alphabet_x10(void)
 {
-	char c = 'a';
+	char c;
 	int i = 0;
 
 	while (i < 10)
 	{
+		c = 'a';
 		while (c <= 'z')
 		{
 			_putchar(c);
