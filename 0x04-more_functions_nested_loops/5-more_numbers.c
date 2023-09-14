@@ -1,37 +1,23 @@
 #include "main.h"
-
 /**
- * more_numbers - entry poit
+ *more_numbers - entry point
+ *followed by a new line
  */
 
 void more_numbers(void)
 {
-	int i = 0;
-	char n;
-	char j;
+	int i, j;
 
-	while (i < 10)
+	for (i = 0; i < 10; i++)
 	{
-		n = 48;
-
-		while (n < 58)
+		for (j = 0; j < 15; j++)
 		{
-			_putchar(n);
-			n++;
-			if (n == 58)
+			if (j >= 10)
 			{
-				j = 16;
-
-				while (j < 21)
-				{
-					_putchar(j + '1');
-					j++;
-				}
+				_putchar(j / 10 + '0');
 			}
+			_putchar(j % 10 + '0');
 		}
-
 		_putchar('\n');
-		i++;
 	}
-
 }
