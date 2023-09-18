@@ -3,9 +3,11 @@
 
 int main(void)
 {
-	char *str;
-	
-	str = "my first strlen!";
-	print_rev(str);
-	return (0);
+	char s[10] = "my school";
+
+	printf("%s\n", s);
+	rev_string(s);
+	printf("%s\n", s);
+
+	return 0;
 }
