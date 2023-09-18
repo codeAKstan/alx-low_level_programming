@@ -6,6 +6,6 @@ int main(void)
 	char *str;
 	
 	str = "my first strlen!";
-	_puts(str);
+	print_rev(str);
 	return (0);
 }
