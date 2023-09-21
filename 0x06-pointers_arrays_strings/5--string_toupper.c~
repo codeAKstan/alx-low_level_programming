@@ -1,0 +1,16 @@
+#include "main.h"
+
+/**
+ * string_toupper - entry point converts a string to uppercase
+ * @str: the string to convert
+ * Return: returns a character
+ */
+
+char *string_toupper(char *str)
+{
+	int i = 0;
+
+	while (str[i] != '\0')
+	{
+		if
+		i++;
