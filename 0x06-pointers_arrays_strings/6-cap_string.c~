@@ -1,0 +1,39 @@
+#include "main.h"
+
+/**
+ * cap_string - entry point, function to capitalize
+ * @str: the string to capitalize
+ * Return: the function should return a char dats type
+ */
+
+char *cap_string(char *str)
+{
+	char *ptr_str = str;
+	char sp[] = ",;.!?\"(){}";
+	int is_word_start = 1;
+
+	while (*ptr_str != '\0')
+	{
+		int is_seperator = 0;
+		int i;
+
+		for (i = 0; sp[i] != '\0'; i++)
+		{
+			if (*ptr_str == sp[i])
+			{
+				is_seperator = 1;
+				break;
+			}
+		}
+
+		if (is_seperator)
+			is_word_start = 1;
+		else if (is_word_start && (*ptr_str >= 'a' && *ptr_str <= 'z'))
+		{
+			*ptr_str = *ptr_str - ('a' - 'A');
+			is_word_start = 0;
+		}
+		ptr_str++;
+	}
+	return (str);
+}
