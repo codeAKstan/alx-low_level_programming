@@ -34,6 +34,10 @@ int **alloc_grid(int width, int height)
 			free(two_dim);
 			return (NULL);
 		}
+	}
+
+	for (i = 0; i < width; i++)
+	{
 
 		for (j = 0; j < height; j++)
 		{
