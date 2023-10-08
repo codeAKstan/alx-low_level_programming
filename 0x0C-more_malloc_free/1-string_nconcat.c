@@ -1,48 +1,46 @@
-#include "main.h"
 #include <stdlib.h>
+#include "main.h"
 
 /**
- * string_nconcat - entry point
+ * *string_nconcat - entry point
  * @s1: the destination string
  * @s2: the second string
- * @n: the no of char to concatenate
- * Return: the return type is a char, if it fails - return NULL
+ * @n: number of char to concatenate from s2
+ *
+ * Return: the return type is a char
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str;
-	unsigned int len, slen = 0;
-	unsigned int i, j;
-	unsigned int total_len;
+	unsigned int i = 0, j = 0;
+	unsigned int len = 0, slen = 0;
 
-	if (s1 != NULL)
-	{
-		while (s1[len] != '\0')
-			len++;
-	}
+	while (s1 && s1[len])
+		len++;
+	while (s2 && s2[slen])
+		slen++;
 
-	if (s2 != NULL)
-	{
-		while (s2[slen] != '\0')
-			slen++;
-	}
+	if (n < slen)
+		str = malloc(sizeof(char) * (len + n + 1));
+	else
+		str = malloc(sizeof(char) * (len + slen + 1));
 
-	total_len = len + (n < slen ? n : slen);
-
-	str = malloc(sizeof(*str) * (total_len + 1));
-
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 
-	for (i = 0; s1 != NULL && s1[i] != '\0'; i++)
+	while (i < len)
 	{
 		str[i] = s1[i];
+		i++;
 	}
 
-	for (j = 0; j < n && s2 != NULL && s2[j] != '\0'; j++)
-		str[i + j] = s2[j];
+	while (n < slen && i < (len + n))
+		str[i++] = s2[j++];
 
-	str[i + j] = '\0';
+	while (n >= slen && i < (len + slen))
+		str[i++] = s2[j++];
+
+	str[i] = '\0';
+
 	return (str);
 }
