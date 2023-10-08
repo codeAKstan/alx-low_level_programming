@@ -1,0 +1,13 @@
+#include "main.h"
+#include <stdlib.h>
+
+/**
+ * array_range- entry point
+ * @min: the min value it should hold
+ * @max: the max value it should hold
+ * Return: Null if fails, min > max return NULL
+ */
+
+int *array_range(int min, int max)
+{
+	
