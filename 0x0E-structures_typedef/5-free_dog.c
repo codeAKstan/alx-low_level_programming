@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * free_void - Entry point
+ * free_dog - Entry point
  * @d: a pointer of type dog_t
  */
 
